@@ -1,0 +1,18 @@
+<button class="btn btn-primary" type="button" disabled *ngIf = "isLoading">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="visually-hidden">Loading...</span>
+  </button>
+      <div class="card" style="width: 100%;" *ngIf = "!isLoading">
+        <img src="{{products.imageUrl}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Product Name: {{products.title}}</h5>
+          <p class="card-text">Product Description: {{products.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngIf = "products.isAvailable">Availability: Available</li>
+          <li class="list-group-item" *ngIf = "products.price">Rs. {{products.price}}</li>
+        </ul>
+        <div class="card-body">
+          <a  routerLink="" class="card-link">Go To Products</a>
+        </div>
+      </div>

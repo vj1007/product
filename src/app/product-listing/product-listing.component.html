@@ -1,0 +1,23 @@
+<app-product-search></app-product-search>
+  
+  <button class="btn btn-primary" type="button" disabled *ngIf = "isLoading">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="visually-hidden">Loading...</span>
+  </button>
+<div class="row mt-4">
+    <div class="col-4 mt-4" *ngFor = "let product of products">
+    <div class="card">
+    <img src="{{product.imageUrl}}" class="card-img-top"
+    alt="Simple product">
+    <div class="card-body">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">Remove Product</button>
+    <a (click)=showProduct(product.id) class="btn btn-primary ml-2">View Details</a>
+    </div>
+    </div>
+    </div>
+   
+   
+    
+    </div>

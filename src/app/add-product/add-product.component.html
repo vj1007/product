@@ -1,0 +1,65 @@
+<!--<div class="mb-3">
+    <label for="validationDefault01" class="form-label">Title</label>
+    <input type="text" class="form-control" id="validationDefault01" value="Mark" required placeholder="Title....">
+  </div>
+  <div class="mb-3">
+    <label for="validationDefault02" class="form-label">Image Url</label>
+    <input type="text" class="form-control" id="validationDefault02" placeholder="Image Url....">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter Description of Product...."></textarea>
+  </div>
+  
+  <button type="submit" >Submit</button>
+  <form class="row g-3">
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">First name</label>
+      <input type="text" class="form-control" id="validationDefault01" value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefaultUsername" class="form-label">Username</label>
+      <div class="input-group">
+        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationDefault03" class="form-label">City</label>
+      <input type="text" class="form-control" id="validationDefault03" required>
+    </div>
+    
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>-->
+  <form [formGroup] = "addProduct">
+    <h3>Enter Product Details</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" id="title" class="form-control"  formControlName="title" placeholder="Title...." >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Image Url</label>
+        <input type="text" id="imageUrl" class="form-control"  formControlName="imageUrl"  placeholder="ImageUrl...." > 
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" id="description" rows="5" formControlName="description" placeholder="Enter Description of Product...." ></textarea>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled] = "!addProduct.valid" >Submit form</button>
+      </div>
+
+    </form>
+
+
+
