@@ -11,7 +11,7 @@ export class ProductService {
     return this.http.get(this.baseUrl);
   }
   addProduct(post){
-    return this.http.post(this.baseUrl, post).subscribe((res) => {console.log(res),alert("Product has been added")});
+    return this.http.post(this.baseUrl, post).subscribe((res) => {console.log(res),alert("Product has been added"),window.location.reload()});
   }
   deleteProduct(id:number){
     console.log("delete1");
