@@ -11,12 +11,12 @@ export class ProductService {
     return this.http.get(this.baseUrl);
   }
   addProduct(post){
-    return this.http.post(this.baseUrl, post).toPromise().then(data => {console.log(data),alert("Product has been added")});
+    return this.http.post(this.baseUrl, post).subscribe((res) => {console.log(res),alert("Product has been added")});
   }
   deleteProduct(id:number){
     console.log("delete1");
     
-    return this.http.delete(this.baseUrl+'/'+id).toPromise().then(data => {console.log(data),window.location.reload()});
+    return this.http.delete(this.baseUrl+'/'+id).subscribe((res) => {console.log(res),window.location.reload()});;
   }
   showProduct(id:number){
     return this.http.get(this.baseUrl+'/'+id);
